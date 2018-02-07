@@ -3,6 +3,7 @@ package com.example.boot.h2postprocessor.processor;
 import com.example.boot.h2postprocessor.entity.Student;
 import java.lang.reflect.Field;
 import java.sql.ResultSet;
+import javax.persistence.Column;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.jdbc.core.RowMapper;
@@ -21,6 +22,14 @@ public class MyPostProcessor implements BeanPostProcessor {
       if (myAnnotation != null) {
         field.setAccessible(true);
 //        Object value = ReflectionUtils.getField(field, bean);
+        Class type=myAnnotation.value();
+        Field[] entityFields=type.getDeclaredFields();
+        for (Field f:entityFields){
+          Column column=f.getAnnotation(Column.class);
+          if (column!=null){
+            System.out.println("!!!!!!!!!!!!!!!!!1"+column.name());
+          }
+        }
         ReflectionUtils.setField(field, bean, createRowMapper(bean));
       }
     }

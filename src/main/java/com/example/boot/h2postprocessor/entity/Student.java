@@ -1,7 +1,12 @@
 package com.example.boot.h2postprocessor.entity;
 
+import javax.persistence.Column;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+
 public class Student {
   private Long id;
+  @Column(name="myname")
   private String name;
   private String passportNumber;
 
