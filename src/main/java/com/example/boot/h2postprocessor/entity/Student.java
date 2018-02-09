@@ -1,6 +1,7 @@
 package com.example.boot.h2postprocessor.entity;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Column;
 import lombok.Data;
@@ -20,6 +21,10 @@ public class Student {
   private Date myDate;
   @Column(name="my_datetime")
   private Date myDateTime;
+  @Column (name="double_value")
+  private Double doubleValue;
+  @Column (name="bigdec_value")
+  private BigDecimal bigDecimal;
 
 
   @Column(name="is_student")

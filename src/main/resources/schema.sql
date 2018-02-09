@@ -6,5 +6,7 @@ create table student
    my_datetime TIMESTAMP,
    name varchar(255) not null,
    passport_number varchar(255) not null,
+   double_value DOUBLE,
+   bigdec_value DECIMAL ,
    primary key(id)
 );

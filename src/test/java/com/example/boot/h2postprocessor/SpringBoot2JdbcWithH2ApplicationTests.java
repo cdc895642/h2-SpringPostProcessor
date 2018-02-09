@@ -1,5 +1,6 @@
 package com.example.boot.h2postprocessor;
 
+import java.util.Optional;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,6 +12,8 @@ public class SpringBoot2JdbcWithH2ApplicationTests {
 
   @Test
   public void contextLoads() {
+    String s;
+//    Optional.ofNullable(s).ifPresent();
   }
 
 }

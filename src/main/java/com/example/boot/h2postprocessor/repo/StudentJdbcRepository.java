@@ -16,7 +16,7 @@ public class StudentJdbcRepository {
   @Autowired
   JdbcTemplate jdbcTemplate;
   @MyAnnotation(Student.class)
-  RowMapper studentRowMapper;
+  private RowMapper studentRowMapper;
 
 //  class StudentRowMapper implements RowMapper<Student> {
 //    @Override
